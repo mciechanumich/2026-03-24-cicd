@@ -22,4 +22,4 @@ jobs:
           - name: Install package
             run: pip install .[test]
           - name: pytest
-            run: pytest -w
+            run: pytest -vv
