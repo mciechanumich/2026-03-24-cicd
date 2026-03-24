@@ -8,7 +8,22 @@ jobs:
         steps:
           - name: Print My Hello
             run: echo "hello there"
-          - name: install
+          - name: pip install
+            run: pip install .[test]
+          - name: pytest
+            run: pytest -w
+
+    test:
+        name: "My test Job"
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout out repo
+            uses: actions/checkout@v6
+          - name: Set up python
+            uses: actions/setup-python@v6
+            with: 
+                python-version: '3.10' 
+          - name: Install package
             run: pip install .[test]
           - name: pytest
             run: pytest -w
