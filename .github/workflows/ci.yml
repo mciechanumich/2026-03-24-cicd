@@ -8,3 +8,7 @@ jobs:
         steps:
           - name: Print My Hello
             run: echo "hello there"
+          - name: install
+            run: pip install .[test]
+          - name: pytest
+            run: pytest -w
