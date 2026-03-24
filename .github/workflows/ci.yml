@@ -6,5 +6,5 @@ jobs:
         name: "My Hello Job"
         runs-on: ubuntu-latest
         steps:
-          - name: "Print My Hello"
-          - run: echo "hello there"
+          - name: Print My Hello
+            run: echo "hello there"
