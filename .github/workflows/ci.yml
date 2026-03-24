@@ -3,6 +3,16 @@ on:
 
 jobs:
     hello:
+        name: My Hello Job
         runs-on: ubuntu-latest
         steps:
-            - run: echo "hello there"
+            -name: Print My Hello
+                run: echo "hello there"
+            -name: second
+                run: echo "second"
+    goodbye:
+        name: My goodbye
+        needs: hello
+        runs-on: windows-latest
+        steps:
+            -run: echo "goodbye"
